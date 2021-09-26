@@ -17,9 +17,9 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 	var ball_options={
-		//isStatic: true,
+		isStatic: false,
 		restitution:.3,
-		frictiion:0,
+		friction:0,
 		density:1.2
 	}
 	//Create the Bodies Here.
@@ -30,7 +30,7 @@ function setup() {
 	ellipseMode(RADIUS)
 	ground = new Ground(width/2,1085,width,20)
 	ground_right = new Ground(1500,1000,20,150)
-	ground_left = new Ground(1300,1000,20,150)
+	ground_left = new Ground(1200,1000,20,150)
 	
 }
 
@@ -52,7 +52,7 @@ function draw() {
 
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(ball,ball.body,{x: 20, y: -30})
+		Matter.Body.applyForce(ball,ball.position,{x: 500, y: -500})
 		
 	}
 
